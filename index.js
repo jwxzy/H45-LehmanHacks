@@ -180,6 +180,9 @@ function playMulti(){
 
         jQuery(this).prev("#PanelE").attr("id","#PanelC");
         jQuery(this).prev("#PanelD").attr("id","#PanelC");
+        $("#PanelC").css("background-color","slategray");
+        $("#PanelE").remove();
+        $("#PanelD").remove();
 
         var newElement = document.createElement("h3"); 
         newElement.id ="UserNameQuestion";
@@ -216,9 +219,6 @@ function playMulti(){
         $("#submit").css("top","60%");
         $("#submit").css("left","35%");
         $("#submit").css("text-align","center");
-
-        
-
     }
 
     function saveUserName(){
@@ -234,11 +234,17 @@ function playMulti(){
         $("#usernameform").remove();
         $("#submit").remove();
         $("#UserNameQuestion").remove();
+
+        var newElement = document.createElement("a"); 
+        var textnode = document.createTextNode("Shuffle To Start");
+        newElement.appendChild(textnode); 
+        newElement.id ="A1";
+        newElement.href="#";
+        newElement.onclick="initatePlayer()";
+        $("#PanelC").append(newElement);
+        $("#A1").css({"position":"absolute","top":"25%","left":"25%","width":"50%","text-align":"center"})
+        
     }
-
-    
-
-
 
 
 
