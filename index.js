@@ -131,6 +131,7 @@ function playSolo(){
     $("#SoloButton").remove();
     $("#GameMode").text("Game Mode: Solo");
     $("#GameMode").css("font-size","0.9em");
+    $("#Location").remove();
     $("#PanelE").css({'height':'100%','width':'100%','left':'00%','top':'0%'});
     makeUser();
 }
@@ -234,6 +235,8 @@ function playMulti(){
         $("#submit").remove();
         $("#UserNameQuestion").remove();
     }
+
+    
 
 
 
