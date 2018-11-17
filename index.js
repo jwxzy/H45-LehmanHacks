@@ -130,17 +130,9 @@ function playSolo(){
     $("#PanelD").remove();
     $("#SoloButton").remove();
     $("#GameMode").text("Game Mode: Solo");
+    $("#GameMode").css("font-size","0.9em");
     $("#PanelE").css({'height':'100%','width':'100%','left':'00%','top':'0%'});
     makeUser();
-
-
-
-
-
-
-
-
-
 }
 
 function playMulti(){
@@ -148,6 +140,7 @@ function playMulti(){
     $("#PanelE").remove();
     $("#MultiButton").remove();
     $("#GameMode").text("Game Mode: Multiplayer");
+    $("#GameMode").css("font-size","0.9em");
     $("#PanelD").css({'height':'100%','width':'100%','left':'00%','top':'0%'});
     var newElement = document.createElement("h2"); 
     var textnode = document.createTextNode("Is This Your Current Location?");
@@ -205,10 +198,10 @@ function playMulti(){
         newElement.required;
         $("#usernameform").append(newElement);
 
-        $("#usernamechoice").css({'height':'10%','width':'30%'});
+        $("#usernamechoice").css({'height':'10%','width':'40%'});
         $("#usernamechoice").css("position","absolute");
         $("#usernamechoice").css("top","30%");
-        $("#usernamechoice").css("left","35%");
+        $("#usernamechoice").css("left","30%");
         $("#usernamechoice").css("text-align","center");
     
         var newElement = document.createElement("input"); 
@@ -228,16 +221,19 @@ function playMulti(){
     }
 
     function saveUserName(){
-        username = document.getElementById("#usernamechoice").innerText();
-        var text = "";
-        var i;
-        for (i = 0; i < x.length ;i++) {
-        text += x.elements[i].value + "<br>";
+        var input = document.getElementById("usernamechoice").value;
+        console.log(input);
+        var username = input;
         $("#Username").text("Username: "+username);
-        }
+        $("#Username").css("font-size","0.9em");
+        startGame();
     }
 
-
+    function startGame(){
+        $("#usernameform").remove();
+        $("#submit").remove();
+        $("#UserNameQuestion").remove();
+    }
 
 
 
